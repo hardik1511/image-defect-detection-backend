@@ -1,10 +1,16 @@
 fastapi==0.110.0
 uvicorn==0.29.0
 python-multipart==0.0.9
-pillow==10.2.0
+
+# Pillow 10.3.0 has wheels for Python 3.13+
+pillow==10.3.0
+
+# Compatible with Python 3.13
 numpy==1.26.4
-opencv-python==4.9.0.80
-pydantic==2.6.1
-pydantic-core==2.16.2
-torch>=2.1.0
-torchvision>=0.16.0
+
+# Latest PyTorch CPU wheels work on Render (pip picks correct wheel)
+torch==2.3.1
+torchvision==0.18.1
+
+# Schema validation (FastAPI uses Pydantic v2)
+pydantic>=2.6,<3
